@@ -1,0 +1,152 @@
+:root {
+    --section-bg2: #f3ead8;
+    --text-cart: #74706b;
+    --money-color: #e7ab3c;
+}
+
+.img_cart {
+    width: 60%;
+}
+
+td:first-child {
+    width: 25%;
+}
+
+td:nth-child(2),
+td:nth-child(3),
+td:nth-child(4),
+td:nth-child(5) {
+    width: 18%;
+}
+
+th {
+    font-size: 1.5rem;
+    color: var(--black-color);
+    padding: 0 0 20px 18px !important;
+}
+
+.bg_cart {
+    background-color: var(--section-bg2);
+    text-align: center;
+    padding: 55px 0;
+}
+
+.cart_title {
+    font-size: 3.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+.nav_cart {
+    color: var(--text-cart);
+    font-size: 1.6rem;
+    font-weight: 500;
+    position: relative;
+    padding: 0 10px;
+}
+
+.nav_cart:first-child::before {
+    content: "";
+    background-color: #74706b;
+    position: absolute;
+    width: 2px;
+    height: 16px;
+    bottom: 3px;
+    right: -3px;
+}
+
+.nav_cart:hover {
+    color: var(--text-cart);
+}
+
+.text_product-cart {
+    font-size: 2.3rem;
+    font-weight: 500;
+    color: var(--text-cart);
+    cursor: unset;
+    padding: 50% 0;
+}
+
+.cart_area {
+    margin-top: 50px;
+}
+
+.cart_inner-product {
+    border-top: 1px solid #b2b2b2 !important;
+}
+
+.product_cart-name {
+    color: var(--black-color);
+}
+
+.product_cart-pirce {
+    color: var(--money-color);
+}
+
+.quantity {
+    padding: 50% 25%;
+}
+
+.pro_qty {
+    width: 123px;
+    height: 46px;
+    border: 2px solid #b2b2b2;
+    display: flex;
+    padding: 0 18px;
+    justify-content: center;
+    align-items: center;
+}
+
+.dec_qty {
+    width: 20px;
+    text-align: center;
+    font-size: 2.3rem;
+    color: #b2b2b2;
+}
+
+.qty_cart {
+    border: none;
+    width: 52px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.product_cart-delete {
+    margin-top: 120px;
+    cursor: pointer;
+    display: none;
+    transition: all 0.25s linear;
+    -webkit-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -ms-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    color: #b2b2b2;
+}
+
+.product_cart-delete:hover {
+    color: var(--black-color);
+}
+
+.icon_delete {
+    width: 28px;
+    height: 25px
+}
+
+tr:hover>td:nth-child(6)>.product_cart-delete {
+    display: block;
+    transition: all 0.25s linear;
+}
+
+.product_cart-total {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--money-color);
+}
+
+.money {
+    color: var(--black-color);
+    padding: 0 50px 0 18px;
+    font-weight: 500;
+}

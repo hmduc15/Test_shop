@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="shortcut icon" href="../Image/faviicon.webp" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="page.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+    <header>
+        <div class="header_top">
+            <div class="header_menu" style="display: none;">
+                <div class="header_menu-dropdown">
+                    <div class="header_menu-icon btn_menu-mobile">
+                        <i class="bi bi-list" style="font-size: 30px;"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="header_search-container" id="search_mobile" style="display: none;">
+                <i style="font-size: 20px; color: white;" class="bi bi-search"></i>
+            </div>
+            <div class="header_top-logo">
+                <a href="#"><img id="img_header" src="../Image/Logo.webp" alt=""></a>
+            </div>
+            <div class="sidebar-login" style="display: none;">
+                <ion-icon class="icon_lock icon_header" name="lock-closed"></ion-icon>
+
+            </div>
+            <div class="sidebar_cart" style="display: none;">
+                <p class="quanty_product" role="table">0</p>
+                <ion-icon class=" icon_header icon_cart" name="cart"></ion-icon>
+            </div>
+            <div class="header_top-sidebar">
+                <div class="sidebar_input-search">
+                    <input type="text" placeholder="Type here...">
+                </div>
+                <!-- <div class="sidebar_dropdown-categories">
+                    <p class="dropdown_categories-text">All categories</p>
+                </div> -->
+                <button id="sidebar_btn-search">
+                    <i class="material-icons icon_search">
+                        search
+                    </i>
+                </button>
+                <div class="sidebar-login">
+                    <div class="sidebar-btn_login">
+                        <ion-icon class="icon_lock" name="lock-closed"></ion-icon>
+                    </div>
+                </div>
+                <div class="sidebar_cart">
+                    <div class="sidebar_cart-checkout">
+                        <span class="sidebar_btn-cart">
+                        <ion-icon class="icon_cart" name="cart"></ion-icon>
+                        <p class="quanty_product" role="table">0</p>
+                         <button id="sidebar_btn-checkout"><a href="#">Checkout</a></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="header_nav">
+                <ul class="nav_menu">
+                    <li class="nav_menu-item">
+                        <a class="nav_menu-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav_menu-item">
+                        <a class="nav_menu-link" href="#">Shop</a>
+                    </li>
+                    <li class="nav_menu-item">
+                        <a class="nav_menu-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav_menu-item">
+                        <a class="nav_menu-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav_menu-item">
+                        <a class="nav_menu-link" href="#">Contact Us</a>
+                    </li>
+                    <li class="nav_menu-item">
+                        <a class="nav_menu-link" href="cart.html">Order Tracking</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- <div class="nav_gift-card">
+                <ion-icon class="icon_gift" name="gift"></ion-icon>
+                <p>Gift Cards</p>
+            </div> -->
+        </nav>
+    </header>
+    <section class="bg_cart">
+        <div class="cart_wrapper">
+            <h2 class="cart_title">Cart</h2>
+            <p class="cart_caption">
+                <a class="nav_cart" href="index.html">Home</a>
+                <a href="#" class="nav_cart">Cart</a>
+            </p>
+        </div>
+    </section>
+    <section class="cart_area">
+        <div class="container">
+            <div class="cart_inner">
+                <div class="table_cart">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                                <th style="text-align:center">Quantity</th>
+                                <th style="text-align:center">Total</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="cart_inner-product">
+                            <!-- <tr>
+                                <td style="width: 25%">
+                                    <div class="product_cart-img">
+                                        <img class="img_cart" src="../Image/Men/Men_1.jpg" alt="">
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="product_cart-name text_product-cart">
+                                        Jean A1
+                                    </p>
+                                </td>
+                                <td>
+                                    <p class="product_cart-pirce text_product-cart">
+                                        $1.19
+                                    </p>
+                                </td>
+                                <td>
+                                    <div class="quantity">
+                                        <div class="pro_qty">
+                                            <span class="dec_qty" role="button">+</span>
+                                            <input type="text" value="1">
+                                            <span class="dec_qty" role="button">-</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td style="text-align:center">
+                                    <p class="product_cart-pirce text_product-cart total_money">
+                                        $1.19
+                                    </p>
+                                </td>
+                                <td>
+                                    <div class="product_cart-delete">
+                                        <ion-icon class="icon_delete" name="trash"></ion-icon>
+                                    </div>
+                                </td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="../App/cart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+</body>

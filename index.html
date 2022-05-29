@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="shortcut icon" href="../Image/faviicon.webp" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="page.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body onload="return textSlideOnload()">
+    <header>
+        <div class="header_top">
+            <div class="header_menu" style="display: none;">
+                <div class="header_menu-dropdown">
+                    <div class="header_menu-icon btn_menu-mobile">
+                        <i class="bi bi-list" style="font-size: 30px;"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="header_search-container" id="search_mobile" style="display: none;">
+                <i style="font-size: 20px; color: white;" class="bi bi-search"></i>
+            </div>
+            <div class="header_top-logo">
+                <a href="#"><img id="img_header" src="../Image/Logo.webp" alt=""></a>
+            </div>
+            <div class="sidebar-login" style="display: none;">
+                <ion-icon class="icon_lock icon_header" name="lock-closed"></ion-icon>
+
+            </div>
+            <div class="header_top-sidebar">
+                <div class="sidebar_input-search">
+                    <input type="text" placeholder="Type here...">
+                </div>
+                <!-- <div class="sidebar_dropdown-categories">
+                    <p class="dropdown_categories-text">All categories</p>
+                </div> -->
+                <button id="sidebar_btn-search">
+                    <i class="material-icons icon_search">
+                        search
+                    </i>
+                </button>
+                <div class="sidebar-login">
+                    <div class="sidebar-btn_login">
+                        <ion-icon class="icon_lock" name="lock-closed"></ion-icon>
+                    </div>
+                </div>
+                <div class="sidebar_cart">
+                    <div class="sidebar_cart-checkout">
+                        <span class="sidebar_btn-cart">
+                        <ion-icon class="icon_cart" name="cart"></ion-icon>
+                        <p class="quanty_product" role="table">0</p>
+                         <!-- <button id="sidebar_btn-checkout"><a href="cart.html">Checkout</a></button> -->
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="header_nav">
+                <ul class="nav_menu">
+                    <li class="nav_menu-item">
+                        <a class="nav_menu-link" href="#">Home</a>
+                    </li>
+                    <li class="nav_menu-item">
+                        <a class="nav_menu-link" href="#product_wrapper">Shop</a>
+                    </li>
+                    <li class="nav_menu-item">
+                        <a class="nav_menu-link" href="#">My Collect</a>
+                    </li>
+                    <li class="nav_menu-item">
+                        <a class="nav_menu-link" href="#blog">Blog</a>
+                    </li>
+                    <li class="nav_menu-item">
+                        <a class="nav_menu-link" href="http://">Contact Us</a>
+                    </li>
+                    <li class="nav_menu-item">
+                        <a class="nav_menu-link" href="cart.html">Order Tracking</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- <div class="nav_gift-card">
+                <ion-icon class="icon_gift" name="gift"></ion-icon>
+                <p>Gift Cards</p>
+            </div> -->
+        </nav>
+    </header>
+    <div class="push_overlay">
+    </div>
+    <div class="container_menu-mobile " style="display: none">
+        <div class="header_nav menu-mobile">
+            <div class="menu_mobile-top">
+                <h3 class="menu_mobile-title bg-dark">MENU
+                    <span id="btn_close-menu">
+                 <ion-icon name="close-outline"></ion-icon>
+                    </span>
+                </h3>
+            </div>
+            <ul class="nav_menu">
+                <li class="nav_menu-item">
+                    <a class="nav_menu-link" href="homepage.html">Home</a>
+                </li>
+                <li class="nav_menu-item">
+                    <a class="nav_menu-link" href="#">Shop</a>
+                </li>
+                <li class="nav_menu-item">
+                    <a class="nav_menu-link" href="#">About Us</a>
+                </li>
+                <li class="nav_menu-item">
+                    <a class="nav_menu-link" href="#">Blog</a>
+                </li>
+                <li class="nav_menu-item">
+                    <a class="nav_menu-link" href="http://">Contact Us</a>
+                </li>
+                <li class="nav_menu-item">
+                    <a class="nav_menu-link" href="http://">Order Tracking</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="organic_content">
+        <div class="content_wrapper-menu" style="display: none;">
+            <div class="content_wrapper-heading">
+                <ion-icon class="icon_menu" name="menu"></ion-icon>
+                Shop By Department
+            </div>
+            <div class="secondary_menu">
+                <ul class="secondary_menu-main">
+                    <li class="secondary_menu-main_item">
+                        <a class="secondary_menu-link" href="http://">Milk & Cream</a>
+                    </li>
+                    <li class="secondary_menu-main_item">
+                        <a class="secondary_menu-link" href="http://">Vegetables</a>
+                    </li>
+                    <li class="secondary_menu-main_item">
+                        <a class="secondary_menu-link" href="http://">Fruits</a>
+                    </li>
+                    <li class="secondary_menu-main_item">
+                        <a class="secondary_menu-link" href="http://">Fast Food</a>
+                    </li>
+                    <li class="secondary_menu-main_item">
+                        <a class="secondary_menu-link" href="http://">Butter & Eggs</a>
+                    </li>
+                    <li class="secondary_menu-main_item">
+                        <a class="secondary_menu-link" href="http://">Ocen Food</a>
+                    </li>
+                    <li class="secondary_menu-main_item">
+                        <a class="secondary_menu-link" href="http://">Dried Food</a>
+                    </li>
+                    <li class="secondary_menu-main_item">
+                        <a class="secondary_menu-link" href="http://">Fress Meat</a>
+                    </li>
+                    <li class="secondary_menu-main_item">
+                        <a class="secondary_menu-link" href="http://">Offerd Food</a>
+                    </li>
+                    <li class="secondary_menu-main_item">
+                        <a class="secondary_menu-link" href="http://">
+                            Best Seller Food
+                            <ion-icon class="icon_row" name="chevron-forward-outline"></ion-icon>
+
+                        </a>
+                        <div class="secondary_menu-dropdown">
+                            <p class="menu_bestseller">
+                                Vegetables
+                            </p>
+                            <p class="menu_bestseller">
+                                Milk & Cream
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content_wrapper-slider">
+            <div class="wrapper_slide-img">
+                <div class="slide_img">
+                    <div class="img_slider slider_1">
+                        <div class="img_slider-wrap">
+                            <img class="fade" src="../Image/slide_1.webp" alt="">
+                            <div class="text_slide text_slide-img1">
+                                <p class="text_slide-heading">
+                                    Get 39% Off
+                                </p>
+                                <h3 class="text_slide-title">
+                                    Start Shop Now & Make Yourself Happy
+                                </h3>
+                                <p class="text_slide-btn"><a href="#product_wrapper">Shop now</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="img_slider slider_2">
+                        <div class="img_slider-wrap">
+                            <img class="fade" src="../Image/slide_2.webp" alt="">
+                            <div class="text_slide  text_slide-img2">
+                                <div class="text_slide-container">
+                                </div>
+                                <h3 class="text_slide-title_img2">
+                                    Start Shop Now & Make Yourself Happy
+                                </h3>
+                                <p class="text_slide-btn_img2"><a href="#product_wrapper">Shop now</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="btn_prev">
+                    <ion-icon name="chevron-back-outline"></ion-icon>
+                </button>
+                <button id="btn_next">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                </button>
+
+            </div>
+        </div>
+    </div>
+    <div class="organic_service">
+        <div class="organic_service-content">
+            <div class="service_content-item">
+                <div class="service_item-icon">
+                    <img src="../Image/icon1.svg" alt="">
+                </div>
+                <div class="service_item-text">
+                    Free Shipping
+                </div>
+            </div>
+            <div class="service_content-item">
+                <div class="service_item-icon">
+                    <img src="../Image/icon2.svg" alt="">
+                </div>
+                <div class="service_item-text" style="max-width: 100px
+                ;">
+                    Secure Payment
+                </div>
+            </div>
+            <div class="service_content-item">
+                <div class="service_item-icon">
+                    <img src="../Image/icon3.svg" alt="">
+                </div>
+                <div class="service_item-text" style="max-width: 109px
+                ;"> Money Back Guarantee
+                </div>
+            </div>
+            <div class="service_content-item">
+                <div class="service_item-icon">
+                    <img src="../Image/icon4.svg" alt="">
+                </div>
+                <div class="service_item-text" style="max-width: 109px
+                ;"> Online Support
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product_wrapper" id="product_wrapper">
+        <h3 class="product_wrapper-text_title">Featured Products</h3>
+        <p class="product_wrapper-text_desc">We love to share our featured products to our costomars</p>
+        <div class="product_wrapper-card" role="main">
+            <div class="product_wrapper-tabs">
+                <div class="product_wrapper-tab line_tab">MEN</div>
+                <div class="product_wrapper-tab">WOMAN</div>
+                <div class="product_wrapper-tab">KID</div>
+                <div class="product_wrapper-tab">ONSALE</div>
+                <div class="product_wrapper-tab">TOP RATED</div>
+            </div>
+            <div class="product_card-container">
+                <div class="product_araival tab_content active" style="height: 100%;">
+                    <div class="product_card" style="top: 0;">
+                        <div class="product_card-img img_men">
+                            <a href="#"> <img src="../Image/Men/Men_1.jpg" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Jean A1</h3>
+                            <p class="product_price">$1.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 0; left: 299px;">
+                        <div class="product_card-img img_men">
+                            <a href="#"> <img width="300" height="300" src="../Image/Men/Men_2.jpg" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Jean A2</h3>
+                            <p class="product_price">$2.12</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 0; left: 598px;">
+                        <div class="product_card-img img_men">
+                            <a href="#"> <img width="300" height="300" src="../Image/Men/Men_3.jpg" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Jean A3</h3>
+                            <p class="product_price">$3</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 0; left: 897px;">
+                        <div class="product_card-img img_men">
+                            <a href="#"> <img width="300" height="300" src="../Image/Men/Men_4.jpg" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Polo A4</h3>
+                            <p class="product_price">$2.87</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 456px; left: 0px;">
+                        <div class="product_card-img img_men">
+                            <a href="#"> <img width="300" height="300" src="../Image/Men/Men_5.jpg" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Jean A4</h3>
+                            <p class="product_price">$2.65</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 456px; left: 299px;">
+                        <div class="product_card-img img_men">
+                            <a href="#"> <img width="300" height="300" src="../Image/Men/Men_6.jpg" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Jean A5</h3>
+                            <p class="product_price">$4.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 456px; left: 598px;">
+                        <div class="product_card-img img_men">
+                            <a href="#"> <img width="300" height="300" src="../Image/Men/Men_7.jpg" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Jean A6</h3>
+                            <p class="product_price">$5.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 456px; left: 897px;">
+                        <div class="product_card-img img_men">
+                            <a href="#"> <img width="300" height="300" src="../Image/Men/Men_8.webp" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Jean A7</h3>
+                            <p class="product_price">$1.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 914px; left: 0;">
+                        <div class="product_card-img img_men">
+                            <a href="#"> <img width="300" height="300" src="../Image/Men/Men_9.webp" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Watch A2</h3>
+                            <p class="product_price">$2.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 914px; left: 299px;">
+                        <div class="product_card-img img_men">
+                            <a href="#"> <img width="300" height="300" src="../Image/Men/Men_10.webp" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                        </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Watch B1</h3>
+                            <p class="product_price">$300</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_popular tab_content">
+                    <div class="product_card" style="top: 0;">
+                        <div class="product_card-img">
+                            <a href="#"> <img src="../Image/Woman/woman1.webp" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Polo Pink</h3>
+                            <p class="product_price">$2.40</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 0; left: 299px;">
+                        <div class="product_card-img">
+                            <a href="#"> <img width="300" height="300" src="../Image/Woman/woman2.webp" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Polo BLue</h3>
+                            <p class="product_price">$1.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 0; left: 598px;">
+                        <div class="product_card-img">
+                            <a href="#"> <img width="300" height="300" src="../Image/Woman/woman3.webp" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Jean W1</h3>
+                            <p class="product_price">$2.59</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 0; left: 897px;">
+                        <div class="product_card-img">
+                            <a href="#"> <img width="300" height="300" src="../Image/Woman/woman4.webp" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Socks W1</h3>
+                            <p class="product_price">$0.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 456px; left: 0px;">
+                        <div class="product_card-img">
+                            <a href="#"> <img width="300" height="300" src="../Image/Woman/woman5.webp" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Jean W2</h3>
+                            <p class="product_price">$4.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 456px; left: 299px;">
+                        <div class="product_card-img">
+                            <a href="#"> <img width="300" height="300" src="../Image/Woman/woman6.webp" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Socks W2</h3>
+                            <p class="product_price">$1.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 456px; left: 598px;">
+                        <div class="product_card-img">
+                            <a href="#"> <img width="300" height="300" src="../Image/Woman/woman7.webp" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Windbreaker W1</h3>
+                            <p class="product_price">$1.24</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 456px; left: 897px;">
+                        <div class="product_card-img">
+                            <a href="#"> <img width="300" height="300" src="../Image/Woman/woman9.webp" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Windbreaker W2</h3>
+                            <p class="product_price">$4.17</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 912px; left: 0px;">
+                        <div class="product_card-img">
+                            <a href="#"> <img width="300" height="300" src="../Image/Woman/woman10.webp" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Shoes W1</h3>
+                            <p class="product_price">$2.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_featured tab_content">
+                    <div class="product_card" style="top: 0;">
+                        <div class="product_card-img">
+                            <a href="#"> <img src="../Image/Kid/Kid_1.webp" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Kid A1</h3>
+                            <p class="product_price">$2.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 0; left: 299px;">
+                        <div class="product_card-img">
+                            <a href="#"> <img width="300" height="300" src="../Image/Kid/Kid_2.webp" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Kid A2</h3>
+                            <p class="product_price">$3.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 0; left: 598px;">
+                        <div class="product_card-img">
+                            <a href="#"> <img width="300" height="300" src="../Image/Kid/Kid_3.webp" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Kid A3</h3>
+                            <p class="product_price">$2.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 0; left: 897px;">
+                        <div class="product_card-img">
+                            <a href="#"> <img width="300" height="300" src="../Image/Kid/Kid_4.jpg" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Kid A4</h3>
+                            <p class="product_price">$1.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 456px; left: 0px;">
+                        <div class="product_card-img">
+                            <a href="#"> <img width="300" height="300" src="../Image/Kid/Kid_5.jpg" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Kid A5</h3>
+                            <p class="product_price">$5.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_sale tab_content">
+                    <div class="product_card" style="top: 0;">
+                        <div class="product_card-img img_men">
+                            <a href="#"> <img src="../Image/Men/Men_1.jpg" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Jean A1</h3>
+                            <p class="product_price">$1.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 0; left: 299px;">
+                        <div class="product_card-img">
+                            <a href="#"> <img width="300" height="300" src="../Image/Woman/woman2.webp" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Polo BLue</h3>
+                            <p class="product_price">$1.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 0; left: 598px;">
+                        <div class="product_card-img">
+                            <a href="#"> <img width="300" height="300" src="../Image/Kid/Kid_3.webp" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Kid A3</h3>
+                            <p class="product_price">$2.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 0; left: 897px;">
+                        <div class="product_card-img">
+                            <a href="#"> <img width="300" height="300" src="../Image/Kid/Kid_4.jpg" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Kid A4</h3>
+                            <p class="product_price">$1.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_rate tab_content">
+                    <div class="product_card" style="top: 0px; left: 0;">
+                        <div class="product_card-img img_men">
+                            <a href="#"> <img width="300" height="300" src="../Image/Men/Men_9.webp" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Watch A2</h3>
+                            <p class="product_price">$2.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card" style="top: 0px; left: 299px;">
+                        <div class="product_card-img img_men">
+                            <a href="#"> <img width="300" height="300" src="../Image/Men/Men_10.webp" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                        </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Watch B1</h3>
+                            <p class="product_price">$300</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="signup_wrapper">
+        <figure>
+            <img src="../Image/banner.webp" alt="">
+        </figure>
+        <div class="banner_content">
+            <div class="news_wrapper">
+                <h3 class="news_wrapper-title">
+                    Fashion will be a part in your life
+                </h3>
+                <p class="news_wrapper-desc">
+                    Clothes are like a good meal. A good movie. Great pieces of music
+                </p>
+            </div>
+            <div class="news_form" style="transform: translateX(60px);">
+                <input id="input_form" type="email" placeholder="Enter Your Email">
+                <button id="btn_form">Subscrice Now</button>
+            </div>
+        </div>
+    </div>
+    <div class="product_offer">
+        <div class="block_wrap">
+            <figure class="block_wrapper-img">
+                <div class="block_wrapper-heading">
+                    <span class="sub_title">
+                        CheckOut All The
+                    </span> <br> OFFERED PRODUCTS
+                    <br>
+                    <a href="#" id="btn_offer">
+                        EXPLORE NOW
+                    </a>
+                </div>
+                <a href="#" title="EXPLORE">
+                    <img id="img-offered" src="../Image/banner_2.webp" alt="">
+                </a>
+            </figure>
+        </div>
+        <div class="product_offered-container">
+            <div class="product_offered-heading">
+                <h3 class="heading-title">Top Product</h3>
+                <p class="heading-desc">Here are some product that come this week</p>
+            </div>
+            <div class="product_offered swiper">
+                <div class="swiper-wrapper">
+                    <div class="product_card swiper-slide">
+                        <div class="product_card-img">
+                            <a href="#"> <img src="../Image/Kid/Kid_1.webp" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Kid A1</h3>
+                            <p class="product_price">$2.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card swiper-slide">
+                        <div class="product_card-img">
+                            <a href="#"> <img width="300" height="300" src="../Image/Men/Men_10.webp" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Watch B1</h3>
+                            <p class="product_price">$2.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card swiper-slide">
+                        <div class="product_card-img">
+                            <a href="#"> <img width="300" height="300" src="../Image/Woman/woman10.webp" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Watch B1</h3>
+                            <p class="product_price">$2.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card swiper-slide">
+                        <div class="product_card-img">
+                            <a href="#"> <img width="300" height="300" src="../Image/Kid/Kid_5.jpg" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Shoes W1</h3>
+                            <p class="product_price">$2.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card swiper-slide">
+                        <div class="product_card-img">
+                            <a href="#"> <img width="300" height="300" src="../Image/Kid/Kid_4.jpg" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Kid A5</h3>
+                            <p class="product_price">$2.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card swiper-slide">
+                        <div class="product_card-img">
+                            <a href="#"> <img width="300" height="300" src="../Image/Woman/woman4.webp" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Kid A4</h3>
+                            <p class="product_price">$2.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card swiper-slide">
+                        <div class="product_card-img">
+                            <a href="#"> <img width="300" height="300" src="../Image/Men/Men_1.jpg" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Socks W1</h3>
+                            <p class="product_price">$2.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card swiper-slide">
+                        <div class="product_card-img">
+                            <a href="#"> <img width="300" height="300" src="../Image/Men/Men_9.webp" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Jean A1</h3>
+                            <p class="product_price">$2.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card swiper-slide">
+                        <div class="product_card-img">
+                            <a href="#"> <img width="300" height="300" src="../Image/Men/Men_7.jpg" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                      </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Watch A2</h3>
+                            <p class="product_price">$2.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_card swiper-slide">
+                        <div class="product_card-img">
+                            <a href="#"> <img width="300" height="300" src="../Image/Men/Men_6.jpg" alt=""></a>
+                        </div>
+                        <a href="" id="btn_quickwiew">Quick View
+                        </a>
+                        <div class="product_card-desc">
+                            <h3 class="product_name">Jean A6</h3>
+                            <p class="product_price">$2.19</p>
+                        </div>
+                        <div class="product_wrapper-action">
+                            <div class="btn_product" id="btn_cart">
+                                <i class="bi bi-cart-plus-fill active"></i>
+                                <i class="bi bi-check-lg non_active " title="view-cart "></i>
+                            </div>
+                            <div class="btn_product" id="btn_heart">
+                                <ion-icon class="icon_heart" name="heart"></ion-icon>
+                            </div>
+                            <div class="btn_product" id="btn_compare">
+                                <ion-icon name="git-compare-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="swiper-button-prev" aria-label="Next" role="button" aria-disabled="false">
+                    <span style="transform: rotate(180deg);" class="material-icons">arrow_right_alt</span>
+                </button>
+                <button class="swiper-button-next">
+                    <span class="material-icons">arrow_right_alt</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="wpb_wrapper">
+        <div class="wpb_wrapper-thumbnail">
+            <figure class="block_wrapper-img">
+                <div style="top: 45px;" class="block_wrapper-heading block_wrapper-heading-mobile ">
+                    <span class="sub_title" style="font-size: 1.8rem; font-weight: 600; color: var(--red-color);">
+                        
+                    </span> <br>KID's Fashion
+                    <br>
+                    <a href="#pro" id="btn_offer" class="">
+                        Buy Now
+                    </a>
+                </div>
+                <a href="#">
+                    <img id="img-thumbnail" src="../Image/wp1.webp" alt="">
+                </a>
+            </figure>
+        </div>
+        <div class="wpb_wrapper-thumbnail">
+            <figure class="block_wrapper-img">
+                <div style="top: 45px;" class="block_wrapper-heading block_wrapper-heading-mobile ">
+                    <span class="sub_title" style="font-size: 1.8rem; font-weight: 600; color: var(--red-color);">
+                         
+                    </span> <br>Men's Fashion
+                    <br>
+                    <a href="#product_wrapper" id="btn_offer" class="">
+                        Buy Now
+                    </a>
+                </div>
+                <a href="#product_wrapper">
+                    <img id="img-thumbnail" src="../Image/wp2.webp" alt="">
+                </a>
+            </figure>
+        </div>
+    </div>
+    <div class="blog_container" id="blog">
+        <div class="blog_heading">
+            <h3 class="blog_heading-title">
+                From the Blog
+            </h3>
+            <p class="blog_headinng-desc">
+                We love to share our featured products to our costomars
+            </p>
+        </div>
+        <div class="post_wrapper swiper">
+            <div class=" post_item-list swiper_wrapper-mobile">
+                <article class="post_item ">
+                    <div class="entry-media">
+                        <figure class="entry-thumbnail">
+                            <a href="#">
+                                <img id="img-post" src="../Image/blog1.webp" alt="">
+                            </a>
+                            <div class="post-item_heading">
+                                <p>by <span id="text_bold">Capital Shop</span>on <span id="text_bold">March 1,2022</span></p>
+                                <div class="post-text">
+                                    <h3>The Best Street Style From London Fashion Week</h3>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                </article>
+                <article class="post_item ">
+                    <div class="entry-media">
+                        <figure class="entry-thumbnail">
+                            <img id="img-post" src="../Image/blog3.webp" alt="">
+                            <div class="post-item_heading">
+                                <p>by <span id="text_bold">Capital</span>on<span id="text_bold">May 30,2022</span></p>
+                                <div class="post-text">
+                                    <h3>Vogue's Ultimate Guide To Autumn/Winter 2019 Shoes</h3>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                </article>
+                <!-- <article class="post_item  swiper-slide">
+                    <div class="entry-media">
+                        <figure class="entry-thumbnail entry_media-wrapper swiper">
+                            <div class="entry-media_slide swiper-wrapper">
+                                <div class="entry_slide swiper-slide">
+                                    <img id="img-post" src="../Image//recipe-1-570x315.jpg" alt="">
+                                </div>
+                                <div class="entry_slide swiper-slide">
+                                    <img id="img-post" src="../Image//recipe-2-570x315.jpg" alt="">
+                                </div>
+                                <div class="entry_slide swiper-slide">
+                                    <img id="img-post" src="../Image//recipe-3-570x315.jpg" alt="">
+                                </div>
+                                <div class="entry_slide swiper-slide">
+                                    <img id="img-post" src="../Image//recipe-4-570x315.jpg" alt="">
+                                </div>
+                            </div>
+                            <button class="post-button-prev" aria-label="Next" role="button" aria-disabled="false">
+                            <span style="transform: rotate(180deg);" class="material-icons">arrow_right_alt</span>
+                            </button>
+                            <button class="post-button-next">
+                            <span class="material-icons">arrow_right_alt</span>
+                            </button>
+                            <div class="post-item_heading">
+                                <p>by <span id="text_bold">Organic</span>on <span id="text_bold">July 1,2019</span></p>
+                                <div class="post-text">
+                                    <h3>We Make a Beautifull Food Repice For our Customers</h3>
+                                </div>
+                            </div>
+                        </figure>
+
+                    </div>
+                </article> -->
+                <article class="post_item ">
+                    <div class="entry-media">
+                        <figure class="entry-thumbnail">
+                            <img id="img-post" src="../Image/blog2.webp" alt=" ">
+                            <div class="post-item_heading ">
+                                <p>by <span id="text_bold">Capital</span>on<span id="text_bold">May 30,2022</span></p>
+                                <div class="post-text ">
+                                    <h3>How To Brighten Your Wardrobe With A Dash Of Lime</h3>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                </article>
+            </div>
+            <div class="swiper-pagination "></div>
+
+        </div>
+    </div>
+    <!-- <div class="wpb_band swiper ">
+        <div class="wpb_band-company swiper-wrapper ">
+            <div class="wpb_band-item swiper-slide ">
+                <img id="img-band " width="115 " height="81 " id="img-band " src="../Image//band-1.png " alt=" ">
+            </div>
+            <div class="wpb_band-item swiper-slide ">
+                <img id="img-band " width="82 " height="88 " id="img-band " src="../Image//band-2.png " alt=" ">
+            </div>
+            <div class="wpb_band-item swiper-slide ">
+                <img id="img-band " width="115 " height="84 " id="img-band " src="../Image//band-3.png " alt=" ">
+            </div>
+            <div class="wpb_band-item swiper-slide ">
+                <img id="img-band " width="99 " height="89 " id="img-band " src="../Image//band-4.png " alt=" ">
+            </div>
+            <div class="wpb_band-item swiper-slide ">
+                <img id="img-band " width="86 " height="89 " id="img-band " src="../Image//band-5.png " alt=" ">
+            </div>
+            <div class="wpb_band-item swiper-slide ">
+                <img id="img-band " width="96 " height="79 " id="img-band " src="../Image//band-6.png " alt=" ">
+            </div>
+        </div>
+        <div class="swiper-pagination "></div>
+    </div> -->
+    <footer>
+        <a href="# " class="scroll_top">
+            <span class="material-icons " id="icon_scroll">
+                arrow_upward
+            </span>
+        </a>
+        <div class="container_footer ">
+            <section class="footer-inner row d-flex ">
+                <div class="col-4 ">
+                    <div class="text_address row ">
+                        <div class="row-cols-1 logo ">
+                            <img id="img_footer " src="../Image//footer-logo.png " alt=" ">
+                        </div>
+                        <div class="row-cols-1 address " style="padding-bottom: 10px ; ">
+                            <h3 class="text-secondary fw-bold ">Our Address</h3>
+                            <address>5544 Avenue Rosedale, Cote Saint-Luc,QC H$V 2J1</address>
+                        </div>
+                        <div class="row-cols-1 contact ">
+                            <h3 class="text-secondary fw-bold ">Quick Contact</h3>
+                            <span>+ 1 265 348 9378</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 " style="padding: 0; ">
+                    <div class="widget ">
+                        <h3 class="widget_title fw-bold ">Our Store</h3>
+                        <div class="menu_store ">
+                            <ul class="menu_store-list ">
+                                <li class="menu_store-item ">New York City</li>
+                                <li class="menu_store-item ">LonDon SF</li>
+                                <li class="menu_store-item ">Cockfosters BP</li>
+                                <li class="menu_store-item ">Los Angeles</li>
+                                <li class="menu_store-item ">Las Vegas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 ">
+                    <div class="social_media ">
+                        <h3 class="fw-bold ">Social Media
+                        </h3>
+                        <div class="social_container ">
+                            <li class="social_media-item ">
+                                <i class="icon_facebook bi bi-facebook bg "></i>
+                                <a href="https://www.facebook.com/hduc1512.messi ">Facebook</a>
+                            </li>
+                            <li class="social_media-item ">
+                                <i class="icon_insta bi bi-instagram "></i>
+                                <a href="https://www.instagram.com/hmduc.15/ ">Instagram</a>
+                            </li>
+                            <li class="social_media-item ">
+                                <i class="icon_email bi bi-envelope-paper "></i>
+                                <a href="mailto:hmduc.m10@gmail.com ">Email</a>
+                            </li>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 ">
+                    <div class="widget ">
+                        <h3 class="widget_title fw-bold ">Customer Services</h3>
+                        <div class="menu_store ">
+                            <ul class="menu_store-list ">
+                                <li class="menu_store-item ">Register</li>
+                                <li class="menu_store-item ">My account</li>
+                                <li class="menu_store-item ">Order Tracking</li>
+                                <li class="menu_store-item ">Contact Us</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="footer_bottom " style="display: none; ">
+            <img src="../Image//handle_cert.png " style="padding: 20px; " alt=" ">
+            <div class="contact_dev ">
+                <h3>
+                    Develop by HmĐuc15
+                    <div class="icon_contact ">
+                        <i style="color:#ff7d58; " class="icon_contact-item icon_facebook bi bi-facebook bg "></i>
+                        <i class="icon_contact-item icon_insta bi bi-instagram "></i>
+                        <i class="icon_contact-item icon_email bi bi-envelope-paper "></i>
+                    </div>
+                </h3>
+
+            </div>
+            <div class="payments_icon " style="display: none; ">
+                <img id="img-payment " src="../Image//payment.png " alt=" ">
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript " src="https://code.jquery.com/jquery-1.11.0.min.js "></script>
+    <script type="text/javascript " src="https://code.jquery.com/jquery-migrate-1.2.1.min.js "></script>
+    <script type="text/javascript " src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js "></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js "></script>
+    <script type="text/javascript " src="https://code.jquery.com/jquery-1.11.0.min.js "></script>
+    <script type="text/javascript " src="https://code.jquery.com/jquery-migrate-1.2.1.min.js "></script>
+    <script type="text/javascript " src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js "></script>
+</body>
+<script src="../App/page.js "></script>
+<script src="../App/cart.js"></script>
+
+</html>
